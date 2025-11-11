@@ -2,13 +2,7 @@
 title: ""
 ---
 
-Hi, I'm Linus Kübler. I'm a developer passionate about creating clean and efficient solutions.
-
-## What I Do
-
-- Software Development
-- Web Technologies
-- Problem Solving
+Hi, I'm Linus Kübler. I studied Computer Science at ETH Zürich and have a passion for technology, drones, and building efficient solutions.
 
 ## Get in Touch
 
