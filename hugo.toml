@@ -1,0 +1,11 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Linus Kuebler'
+theme = 'minimal'
+
+[params]
+  description = 'Personal website'
+  author = 'Linus Kuebler'
+  email = 'kuebler.linus+contact@gmail.com'
+  linkedin = 'https://www.linkedin.com/in/lkuebler/'
+  github = 'https://github.com/lkuebler'
