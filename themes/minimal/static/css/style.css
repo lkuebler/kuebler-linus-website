@@ -121,6 +121,20 @@ a:hover {
     margin-bottom: 1.5rem;
 }
 
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    border: 3px solid var(--border-color);
+    transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+}
+
 .subtitle {
     color: var(--secondary-text);
     font-size: 1.125rem;

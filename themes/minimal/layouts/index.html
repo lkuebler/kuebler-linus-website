@@ -1,5 +1,9 @@
 {{ define "main" }}
 <div class="home">
+    {{ with .Site.Params.profile_image }}
+    <img src="{{ . | relURL }}" alt="{{ $.Site.Params.author }}" class="profile-photo">
+    {{ end }}
+    
     <h1>{{ .Site.Title }}</h1>
     
     {{ with .Content }}
