@@ -2,7 +2,7 @@
 title: ""
 ---
 
-Hi, I'm Linus Kuebler. I'm a developer passionate about creating clean and efficient solutions.
+Hi, I'm Linus Kübler. I'm a developer passionate about creating clean and efficient solutions.
 
 ## What I Do
 

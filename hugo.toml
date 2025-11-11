@@ -1,11 +1,11 @@
 baseURL = 'https://lkuebler.github.io/kuebler-linus-website/'
 languageCode = 'en-us'
-title = 'Linus Kuebler'
+title = 'Linus Kübler'
 theme = 'minimal'
 
 [params]
   description = 'Personal website'
-  author = 'Linus Kuebler'
+  author = 'Linus Kübler'
   email = 'kuebler.linus+contact@gmail.com'
   linkedin = 'https://www.linkedin.com/in/lkuebler/'
   github = 'https://github.com/lkuebler'
