@@ -22,7 +22,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
     <script>
-        VANTA.BIRDS({
+        let vantaEffect = VANTA.BIRDS({
             el: "body",
             mouseControls: true,
             touchControls: true,
@@ -42,6 +42,44 @@
             cohesion: 34.00,
             backgroundAlpha: 0.42
         })
+
+        // Easter egg: Profile photo click
+        document.addEventListener('DOMContentLoaded', function() {
+            const profilePhoto = document.querySelector('.profile-photo');
+            if (profilePhoto) {
+                profilePhoto.addEventListener('click', function() {
+                    // Make birds scatter
+                    if (vantaEffect) {
+                        vantaEffect.setOptions({
+                            speedLimit: 25.00,
+                            separation: 100.00
+                        });
+                        setTimeout(() => {
+                            vantaEffect.setOptions({
+                                speedLimit: 7.00,
+                                separation: 26.00
+                            });
+                        }, 2000);
+                    }
+                    
+                    // Show toast message
+                    showToast("Why click on my face when you could click on my links below? 😄");
+                });
+            }
+        });
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'easter-egg-toast';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => toast.classList.add('show'), 100);
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 3500);
+        }
     </script>
 </body>
 </html>

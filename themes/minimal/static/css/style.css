@@ -127,6 +127,13 @@ a:hover {
     max-width: 600px;
     position: relative;
     z-index: 10;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(30px) saturate(180%);
+    -webkit-backdrop-filter: blur(30px) saturate(180%);
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 3rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
 }
 
 .home h1 {
@@ -139,14 +146,17 @@ a:hover {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 2rem;
-    border: 3px solid var(--border-color);
-    transition: transform 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     z-index: 10;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.12);
 }
 
 .profile-photo:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.16);
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 .subtitle {
@@ -168,23 +178,25 @@ a:hover {
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.25rem;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 14px;
     color: var(--text-color);
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     font-size: 0.95rem;
-    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
 }
 
 .social-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: var(--link-color);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 164, 0, 0.4);
     color: var(--link-color);
     text-decoration: none;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 164, 0, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(255, 164, 0, 0.2);
 }
 
 .social-btn svg {
@@ -281,11 +293,37 @@ article {
 /* Footer */
 footer {
     margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border-color);
+    padding: 1.5rem 2rem;
     text-align: center;
     color: var(--secondary-text);
     font-size: 0.9rem;
+}
+
+/* Easter Egg Toast */
+.easter-egg-toast {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    color: #333;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    font-size: 0.95rem;
+    max-width: 90%;
+    text-align: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.easter-egg-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
 }
 
 /* Responsive */
