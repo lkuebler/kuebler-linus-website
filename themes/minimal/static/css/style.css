@@ -6,20 +6,29 @@
 }
 
 :root {
-    --bg-color: #ffffff;
-    --text-color: #333333;
-    --link-color: #0066cc;
-    --link-hover: #004499;
-    --border-color: #e0e0e0;
-    --secondary-text: #666666;
+    --bg-color: transparent;
+    --text-color: #ffffff;
+    --link-color: #ffa400;
+    --link-hover: #ffb733;
+    --border-color: rgba(255, 255, 255, 0.3);
+    --secondary-text: rgba(255, 255, 255, 0.85);
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--bg-color);
+    background-color: #7da0ff;
     font-size: 16px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+}
+
+html {
+    height: 100%;
+    width: 100%;
 }
 
 /* Container */
@@ -29,6 +38,7 @@ body {
     padding: 2rem 1.5rem;
     min-height: 100vh;
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
 }
@@ -115,6 +125,8 @@ a:hover {
 /* Home Page */
 .home {
     max-width: 600px;
+    position: relative;
+    z-index: 10;
 }
 
 .home h1 {
@@ -129,6 +141,8 @@ a:hover {
     margin-bottom: 2rem;
     border: 3px solid var(--border-color);
     transition: transform 0.3s ease;
+    position: relative;
+    z-index: 10;
 }
 
 .profile-photo:hover {
@@ -154,22 +168,23 @@ a:hover {
     align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.25rem;
-    background-color: var(--bg-color);
+    background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid var(--border-color);
     border-radius: 6px;
     color: var(--text-color);
     text-decoration: none;
     transition: all 0.2s ease;
     font-size: 0.95rem;
+    backdrop-filter: blur(10px);
 }
 
 .social-btn:hover {
-    background-color: #f8f8f8;
+    background-color: rgba(255, 255, 255, 0.2);
     border-color: var(--link-color);
     color: var(--link-color);
     text-decoration: none;
     transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(255, 164, 0, 0.3);
 }
 
 .social-btn svg {
