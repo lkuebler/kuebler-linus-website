@@ -1,4 +1,4 @@
-baseURL = 'https://lkuebler.github.io/kuebler-linus-website/'
+baseURL = '/'
 languageCode = 'en-us'
 title = 'Linus Kübler'
 theme = 'minimal'
