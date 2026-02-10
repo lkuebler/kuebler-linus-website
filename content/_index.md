@@ -1,5 +1,6 @@
 ---
 title: ""
+layout: "home"
 ---
 
 Hi, I'm Linus Kübler. I studied Computer Science at ETH Zürich and have a passion for technology, drones, and building efficient solutions.

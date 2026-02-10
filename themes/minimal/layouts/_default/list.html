@@ -1,13 +1,13 @@
 {{ define "main" }}
 <div class="list-page">
     <h1>{{ .Title }}</h1>
-    
+
     {{ with .Content }}
     <div class="content">
         {{ . }}
     </div>
     {{ end }}
-    
+
     {{ if .Pages }}
     <ul class="post-list">
         {{ range .Pages }}
