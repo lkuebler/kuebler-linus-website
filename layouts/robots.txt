@@ -5,4 +5,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location (Hugo generates this automatically)
-Sitemap: /sitemap.xml
+Sitemap: {{ .Site.BaseURL }}sitemap.xml

@@ -2,6 +2,7 @@ baseURL = '/'
 languageCode = 'en-us'
 title = 'Linus Kübler'
 theme = 'minimal'
+enableRobotsTXT = true
 
 [params]
   description = 'Personal website'
