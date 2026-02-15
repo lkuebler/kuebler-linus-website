@@ -1,0 +1,8 @@
+# robots.txt for Linus Kübler's personal website
+# Allow all search engines to crawl all content
+
+User-agent: *
+Allow: /
+
+# Sitemap location (Hugo generates this automatically)
+Sitemap: {{ absURL "sitemap.xml" }}
