@@ -5,18 +5,24 @@
         <h1>{{ .Site.Title }}</h1>
         {{ with .Params.tagline }}<p class="tagline">{{ . }}</p>{{ end }}
     </div>
-    {{ with .Site.Params.profile_image }}
-    <figure class="portrait">
-        <img src="{{ . | relURL }}" alt="{{ $.Site.Params.author }}" class="profile-photo">
-        <figcaption class="mono muted">Fig. 1 — Portrait</figcaption>
+    <figure class="figure">
+        <div id="figure"></div>
+        <figcaption class="mono muted"><span>Fig. 1 — Quadcopter</span><span id="figure-read">rest</span></figcaption>
     </figure>
-    {{ end }}
 </section>
 
 <section class="row">
     <p class="label mono">01 — About</p>
-    <div class="content">
-        {{ .Content }}
+    <div class="about">
+        <div class="content">
+            {{ .Content }}
+        </div>
+        {{ with .Site.Params.profile_image }}
+        <figure class="portrait">
+            <img src="{{ . | relURL }}" alt="{{ $.Site.Params.author }}" class="profile-photo">
+            <figcaption class="mono muted">Fig. 2 — Portrait</figcaption>
+        </figure>
+        {{ end }}
     </div>
 </section>
 
@@ -48,4 +54,8 @@
         </ul>
     </div>
 </section>
+
+<script src="{{ "js/hairline/kernel.js" | relURL }}"></script>
+<script src="{{ "js/hairline/host.js" | relURL }}"></script>
+<script type="module" src="{{ "js/hairline/quadcopter.js" | relURL }}"></script>
 {{ end }}
