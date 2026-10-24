@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta name="color-scheme" content="light dark">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap">
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+    <div class="frame">
+        <header class="bar">
+            <span class="mono">{{ .Site.Title }}</span>
+            <span class="mono muted">Zürich · 47.3769° N, 8.5417° E</span>
+        </header>
+
+        <main>
+            {{ block "main" . }}{{ end }}
+        </main>
+
+        <footer class="bar">
+            <span class="mono muted">&copy; {{ now.Year }} {{ .Site.Params.author }}</span>
+            <span class="mono muted">Built with Hugo</span>
+        </footer>
+    </div>
+
+    <script>
+        // Easter egg: clicking the portrait points you back at the links
+        document.addEventListener('DOMContentLoaded', function() {
+            const profilePhoto = document.querySelector('.profile-photo');
+            if (!profilePhoto) return;
+            profilePhoto.addEventListener('click', function() {
+                showToast("Why click on my face when you could click on my links below?");
+                document.querySelectorAll('.link-row').forEach(function(row, i) {
+                    setTimeout(function() {
+                        row.classList.add('pulse');
+                        setTimeout(function() { row.classList.remove('pulse'); }, 600);
+                    }, i * 120);
+                });
+            });
+        });
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast mono';
+            toast.setAttribute('role', 'status');
+            toast.textContent = message;
+            document.body.appendChild(toast);
+
+            setTimeout(() => toast.classList.add('show'), 50);
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
